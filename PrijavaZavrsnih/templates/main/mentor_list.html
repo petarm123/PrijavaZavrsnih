@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<br>
+<h2> Mentori </h2>
+<br>
+{% for mentor in mentor_list %}
+    <div class="mentor">
+        <h4>Ime: {{ mentor.mentor_ime }}</h4>
+        <h4>Prezime: {{mentor.mentor_prezime}}</h4>
+        <hr>
+      
+    </div>
+{% endfor %}
+{% endblock %}

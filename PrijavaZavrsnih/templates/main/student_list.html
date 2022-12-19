@@ -1,0 +1,16 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<br>
+<h2> Studenti </h2>
+<br>
+{% for student in student_list %}
+    <div class="student">
+        <h4>Ime: {{ student.student_ime }}</h4>
+        <h4>Prezime: {{student.student_prezime}}</h4>
+        <h4>Broj xice: {{student.student_broj_xice}}</h4>
+        <h4>Kolegiji: {% for kolegij in student.student_kolegiji.all %}{{kolegij}}<br>{% endfor %}</h4>
+        <hr>
+      
+    </div>
+{% endfor %}
+{% endblock %}

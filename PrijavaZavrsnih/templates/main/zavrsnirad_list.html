@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<br>
+<h2> Završni radovi </h2>
+<br>
+{% for zavrsnirad in zavrsnirad_list %}
+    <div class="zavrsnirad">
+        <h4>Mentor: {{ zavrsnirad.zavrsni_mentor }}</h4>
+        <h4>Student: {{ zavrsnirad.zavrsni_student }}</h4>
+        <h4>Naslov: {{ zavrsnirad.zavrsni_naslov  }}</h4>
+        <h4>Broj prijave: {{ zavrsnirad.zavrsni_broj_prijave  }}</h4>
+        <h4>Kolegij: {{ zavrsnirad.zavrsni_kolegij  }}</h4>
+        <hr>
+       
+    </div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends "base_generic.html" %}
+{% block content %}
+<br>
+<h2> Kolegij </h2>
+<br>
+{% for kolegij in kolegij_list %}
+    <div class="kolegij">
+        <h4>Naziv: {{ kolegij.kolegij_naziv }}</h4>
+        <h4>Nositelj: {{kolegij.kolegij_nositelj}}</h4>
+        <hr>
+      
+    </div>
+{% endfor %}
+{% endblock %}
