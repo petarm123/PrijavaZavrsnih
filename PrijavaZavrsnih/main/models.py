@@ -31,9 +31,9 @@ class ZavrsniRad(models.Model):
     zavrsni_mentor = models.OneToOneField(Mentor, on_delete=models.CASCADE, default=1)
     zavrsni_student = models.OneToOneField(
         Student, on_delete=models.CASCADE, primary_key=True, default=1)
-    zavrsni_naslov = models.CharField(max_length=50)
+    zavrsni_naslov = models.CharField(max_length=100)
     zavrsni_broj_prijave = models.IntegerField(
-        validators=[MaxValueValidator(10), MinValueValidator(1)], default=1)
+        validators=[MaxValueValidator(100), MinValueValidator(1)], default=1)
     zavrsni_kolegij = models.ForeignKey(
         Kolegij, on_delete=models.CASCADE, default=1)
 

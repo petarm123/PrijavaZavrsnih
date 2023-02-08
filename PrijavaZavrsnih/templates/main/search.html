@@ -1,0 +1,15 @@
+<form action="{% url 'main:search' %}" method="get">
+    <input type="text" name="q">
+    <input type="submit" value="Search">
+  </form>
+{% if results %}
+  <ul>
+    {% for result in results %}
+      <li>{{ result.mentor_ime }} {{ result.mentor_prezime }} </li>
+      <a href="{% url 'main:delete' result.pk %}">Delete</a>
+    {% endfor %}
+  </ul>
+{% else %}
+  No results found.
+{% endif %}
+

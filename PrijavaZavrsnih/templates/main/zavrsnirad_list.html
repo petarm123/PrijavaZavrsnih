@@ -1,4 +1,8 @@
 {% extends "base_generic.html" %}
+
+{% block new_data %}
+{% endblock %}
+
 {% block content %}
 <br>
 <h2> Završni radovi </h2>
@@ -10,6 +14,7 @@
         <h4>Naslov: {{ zavrsnirad.zavrsni_naslov  }}</h4>
         <h4>Broj prijave: {{ zavrsnirad.zavrsni_broj_prijave  }}</h4>
         <h4>Kolegij: {{ zavrsnirad.zavrsni_kolegij  }}</h4>
+		<a href="{% url 'main:update-zavrsni' zavrsnirad.pk %}">Update</a>
         <hr>
        
     </div>
