@@ -1,4 +1,8 @@
 {% extends "base_generic.html" %}
+
+{% block new_data %}
+{% endblock %}
+
 {% block content %}
 <br>
 <h2> Studenti </h2>
@@ -9,6 +13,7 @@
         <h4>Prezime: {{student.student_prezime}}</h4>
         <h4>Broj xice: {{student.student_broj_xice}}</h4>
         <h4>Kolegiji: {% for kolegij in student.student_kolegiji.all %}{{kolegij}}<br>{% endfor %}</h4>
+		<a href="{% url 'main:update-student' student.pk %}">Update</a>
         <hr>
       
     </div>

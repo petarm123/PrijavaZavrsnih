@@ -6,14 +6,42 @@
 
 <body>
     <h1>Prijava završnih radova </h1>
+    {% if user.is_authenticated %}
+    <p>Vaše ime: {{ user.username }}</p>
+{% else %}
+    <p>Niste prijavljeni.</p>
+{% endif %}
     <div id="sidebar">
         {% block sidebar %}
         <ul>
+			<li><a href="{% url 'main:homepage' %}">Početna</a></li>
             <li><a href="/mentori">Mentori</a></li>
             <li><a href="/zavrsniradovi">Završni radovi</a></li>
             <li><a href="/studenti">Studenti</a></li>
             <li><a href="/kolegiji">Kolegiji</a></li>
+			
         </ul>
+		{% block new_data %}
+        <h2> Unos novih podataka</h2>
+        <ul>
+            <li><a href="mentori/upload"> Unos mentora</a></li>
+            <li><a href="kolegiji/upload"> Unos kolegija</a></li>
+            <li><a href="studenti/upload"> Unos studenata</a></li>
+			<li><a href="zavrsnirad/upload"> Unos završnog rada</a></li>
+        </ul>
+        <h2> Pretraživanje i brisanje postojećih podataka</h2>
+        <li><a href="mentori/search"> Pretraga mentora</a></li>
+        <li><a href="kolegiji/search"> Pretraga kolegija</a></li>
+        <li><a href="studenti/search"> Pretraga studenata</a></li>
+        <li><a href="zavrsnirad/search"> Pretraga završnih radova</a></li>
+		<h2> Prijava i registracija </h2>
+		<ul>
+			<li><a href="register/">Registracija</a></li>
+			<li><a href="accounts/login">Login</a></li>
+		</ul>
+			
+        {% endblock %}
+			
         {% endblock %}
     </div>
 
@@ -23,3 +51,4 @@
     </div>
 </body>
 </html>
+
